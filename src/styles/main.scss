@@ -1,0 +1,10 @@
+:root {
+  --main-bckg: #161616;
+  --main-color: #fff;
+}
+
+body.body{
+  background: var(--main-bckg);
+  color: var(--main-color);
+}
+
