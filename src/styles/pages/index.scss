@@ -1,0 +1,34 @@
+@import '../mixins/variables.scss';
+
+body.js--light-mode .home-hero_descr-logo path{
+    fill: var(--main-color);
+}
+body.js--light-mode .home-hero_descr_name-logo{
+    color: var(--main-color);
+}
+body.js--light-mode .home-hero-section .btn-video-play path,
+body.js--light-mode .home-hero-section .btn-video{
+    border-color: var(--main-color);
+    color: var(--main-color);
+    fill: var(--main-color);
+}
+.products-img_wrp{
+    filter: drop-shadow(0px 4px 40px rgba(72, 0, 226, 0.3));
+}
+
+.partners-card{
+    background: var(--main-bckg);
+}
+body.js--light-mode .token-box_item,
+body.js--light-mode .partners-card{
+    border-color: rgba(0, 0, 0, 0.1);
+}
+body.js--light-mode .partners-card:hover{
+    border-color: var(--purpur);
+}
+body.js--light-mode .partners-card .btn.transparent{
+    color:  var(--purpur);
+}
+.token-box_item.coming-soon .token-item-additional-text{
+    display: block;
+}

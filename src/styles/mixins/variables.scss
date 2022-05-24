@@ -1,0 +1,11 @@
+:root {
+    --main-bckg: #161616;
+    --main-color: #fff;
+    --secondary-color: #212227;
+    --accent1: #F3BA2F;
+    --purpur: #4800E2;
+  }
+  body.js--light-mode{
+      --main-bckg: #fff;
+      --main-color: #212227;
+  }

@@ -12,3 +12,4 @@ node_modules/
 
 # my files
 src/index.html
+src/styles/draft.scss
