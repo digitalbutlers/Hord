@@ -3,7 +3,9 @@
 body{
   background-color: var(--main-bckg) !important;
   color: var(--main-color);
+  transition: all 0s linear;
 }
+
 a.token__link,
 .news-cards__card,
 .news-cards__card.news-cards__card-link,
@@ -287,10 +289,10 @@ background: #fff;
 transition: all 0.3s ease;
 }
 .navbar__btn-line:before{
-top: -9px;
+top: -7px;
 }
 .navbar__btn-line:after{
-bottom: -9px;
+bottom: -7px;
 }
 .navbar__btn .navbar__btn-line{
   background:rgba(255, 255, 255, 1);
@@ -300,11 +302,11 @@ bottom: -9px;
 }
 .navbar__btn.w--open .navbar__btn-line:before{
   transition: all 0.3s ease;
-  transform: rotate(45deg) translate(7px, 6px);
+  transform: rotate(45deg) translate(5px, 5px);
 }
 .navbar__btn.w--open .navbar__btn-line:after{
   transition: all 0.3s ease;
-  transform: rotate(-45deg) translate(7px, -6px);
+  transform: rotate(-45deg) translate(5px, -5px);
 }
 .navbar-item.w--open .navbar-item-arrow{
   transform: rotate(-180deg);
@@ -348,6 +350,11 @@ body.js--light-mode .box-back_arrow-post{
     width: max-content;
     opacity: 0;
     transition: all 0.5s ease;
+    pointer-events: none;
+}
+.click-to-copy.copied {
+    opacity: 1;
+    transition: all 0.5s ease;
 }
 .click-to-copy.copied::before {
     opacity: 1;
@@ -366,15 +373,20 @@ overflow: hidden;
 .dd__link.dd__link--secondary:last-child {
   margin-bottom: 0;
 }
-
 .navbar-box-link:hover .navbar-img-wrp{
   transform: scale(1.15);
 }
+.cta-box:hover,
 .news-cards__card:hover {
     border-color: #4800e2 !important;
     box-shadow: 0 0 0 4px #4800e2 !important;
 }
-
+.tokenomic-absolue-box{
+  height: calc(100% - 65px);
+}
+.hord-utilities_main-box{
+  height: max-content;
+}
 @media screen and (max-width:991px) {
   .navbar__btn{
     display: flex !important;

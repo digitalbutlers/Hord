@@ -1,23 +1,34 @@
-/* eslint-disable no-undef */
-// eslint-disable-next-line no-new
-new ClipboardJS('[data-title="btn-copy"]');
 
-const copyButton = document.querySelectorAll('[data-name="btn-copy"]');
-const copyLink = document.querySelectorAll('[data-name="copied-text"]');
 
-copyButton.forEach((element, index) => {
-	element.setAttribute('data-clipboard-text', `${copyLink[index].textContent}`);
-});
+async function copyContent(currentBtn) {
+	const nearParrenForCoppiedElements = currentBtn.closest('[data-name="parent-copied-elements"]');
+	const copiedContent = nearParrenForCoppiedElements.querySelector('[data-name="copied-content"]').textContent;
 
-const clickToCopy = document.querySelectorAll('[data-name="btn-copy"]');
-
-function copyText() {
-	this.classList.add('copied');
-	setTimeout(() => {
-		this.classList.remove('copied');
-	}, 1500);
+	try {
+		await navigator.clipboard.writeText(copiedContent);
+		console.log('нужный контент скопирован в буфер обмена');
+	} catch (err) {
+		console.error('Ошибка копирования в буфер: ', err);
+	}
 }
 
-for (let i = 0; i < clickToCopy.length; i += 1) {
-	clickToCopy[i].addEventListener('click', copyText);
+function copyText(event) {
+	if (event.target.getAttribute('data-name') === 'btn-copy') {
+		const currentBtn = event.target;
+		currentBtn.classList.add('copied');
+		copyContent(currentBtn);
+		setTimeout(() => {
+			currentBtn.classList.remove('copied');
+		}, 1500);
+	} else if (event.target.closest('[data-name]')
+	&& event.target.closest('[data-name]').getAttribute('data-name') === 'btn-copy') {
+		const currentBtn = event.target.closest('[data-name]');
+		currentBtn.classList.add('copied');
+		copyContent(currentBtn);
+		setTimeout(() => {
+			currentBtn.classList.remove('copied');
+		}, 1500);
+	}
 }
+
+document.addEventListener('click', copyText);
