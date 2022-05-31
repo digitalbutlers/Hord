@@ -7,8 +7,6 @@ function toggleClassLinks() {
 	titles.forEach((elem, index) => {
 		const heightElem = elem.clientHeight;
 		const tab = elem.offsetTop - 160;
-		console.log(heightElem);
-		console.log(tab);
 		/* const scroll = $(window).scrollTop(); */
 		const scroll = window.pageYOffset;
 		if (scroll > tab && scroll < tab + heightElem) {
